@@ -52,6 +52,22 @@
     <p class="mt-4 text-xl leading-7 text-zinc-600">
       A personal sandbox for interacting with XML and JSON APIs.
     </p>
+
+    <%!-- show warnings for missing API keys --%>
+    <div
+      :if={Application.get_env(:api_playground, :openweather_api_key) == nil}
+      class="mt-8 mx-auto p-4 bg-yellow-200 text-center rounded"
+    >
+      <h1 class="text-2xl">OpenWeather API key not set!</h1>
+      <p class="mt-6">
+        Please set the <code>OPENWEATHER_API_KEY</code>
+        environment variable and restart the server.
+      </p>
+      <p class="mt-2">
+        The OpenWeather playgrounds will not function without an OpenWeather API key!
+      </p>
+    </div>
+
     <div class="mt-12">
       <h2 class="text-2xl font-semibold">JSON</h2>
       <ul class="text-lg [&>*]:mt-2">
