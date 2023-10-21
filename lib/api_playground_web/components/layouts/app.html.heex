@@ -4,23 +4,37 @@
       <a href="/">
         <img src={~p"/images/logo.svg"} width="36" />
       </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
+      <p class="text-brand font-bold leading-6">
+        API Playground
       </p>
     </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
+    <div class="flex items-center gap-8 font-semibold leading-6 text-zinc-900 cursor-pointer">
+      <details>
+        <summary>JSON</summary>
+        <div class="absolute top-10 right-24 bg-white px-4 py-2 rounded rounded-lg b rounded-tr-none
+                    border border-black border-2">
+          <ul>
+            <li>
+              <a href={~p"/json/openweather"} class="hover:text-zinc-700">
+                OpenWeather (JSON)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>XML</summary>
+        <div class="absolute top-10 right-8 bg-white px-4 py-2 rounded rounded-lg rounded-tr-none
+                    border border-black border-2">
+          <ul>
+            <li>
+              <a href={~p"/xml/openweather"} class="hover:text-zinc-700">
+                OpenWeather (XML)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
   </div>
 </header>
