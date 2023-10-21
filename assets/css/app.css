@@ -6,3 +6,11 @@ a {
   color: blue;
   font-weight: bold;
 }
+
+code {
+  padding: 0.125rem 0.25rem;
+  background-color: #ddd;
+  color: #f33;
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
