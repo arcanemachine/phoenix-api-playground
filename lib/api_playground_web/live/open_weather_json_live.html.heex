@@ -1,10 +1,16 @@
-<div :if={not @api_key_exists} class="mx-auto p-4 bg-red-200 text-center rounded">
-  <h1 class="text-3xl">OpenWeather API key not set!</h1>
-  <p class="mt-6">
-    Please set the <code>OPENWEATHER_API_KEY</code>
-    environment variable before starting the server.
-  </p>
-  <p class="mt-2">
-    This playground will not function without an OpenWeather API key!
-  </p>
+<div class="mx-auto">
+  <p class="text-center text-lg">Fill out the form to generate an API request:</p>
+
+  <.form
+    class="w-full max-w-md mt-12 mx-auto"
+    for={@form}
+    phx-submit="submit"
+    phx-change="validate"
+  >
+    <.input field={@form[:city]} label="Your city" required phx-debounce="750" />
+
+    <div class="mt-12 mx-auto text-center">
+      <.button class="px-6 py-4 bg-green-800 hover:bg-green-900 text-xl">Submit</.button>
+    </div>
+  </.form>
 </div>
