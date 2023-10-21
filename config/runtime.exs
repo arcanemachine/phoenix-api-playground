@@ -20,6 +20,9 @@ if System.get_env("PHX_SERVER") do
   config :api_playground, ApiPlaygroundWeb.Endpoint, server: true
 end
 
+config :api_playground,
+  openweather_api_key: System.get_env("OPENWEATHER_API_KEY")
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
