@@ -18,6 +18,7 @@ defmodule ApiPlaygroundWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/json/openweather", OpenWeatherJsonLive
   end
 
   # Other scopes may use custom stacks.

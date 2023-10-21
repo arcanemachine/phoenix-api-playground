@@ -1,0 +1,10 @@
+<div :if={not @api_key_exists} class="mx-auto p-4 bg-red-200 text-center rounded">
+  <h1 class="text-3xl">OpenWeather API key not set!</h1>
+  <p class="mt-6">
+    Please set the <code>OPENWEATHER_API_KEY</code>
+    environment variable before starting the server.
+  </p>
+  <p class="mt-2">
+    This playground will not function without an OpenWeather API key!
+  </p>
+</div>
