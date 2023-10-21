@@ -8,7 +8,10 @@
         API Playground
       </p>
     </div>
-    <div class="flex items-center gap-8 font-semibold leading-6 text-zinc-900 cursor-pointer">
+    <div
+      id="navbar-dropdowns-container"
+      class="flex items-center gap-8 font-semibold leading-6 text-zinc-900 cursor-pointer"
+    >
       <details>
         <summary>JSON</summary>
         <div class="absolute top-10 right-24 bg-white px-4 py-2 rounded rounded-lg b rounded-tr-none
@@ -36,6 +39,20 @@
         </div>
       </details>
     </div>
+    <script>
+      const dropdownElements =
+        document.querySelector("#navbar-dropdowns-container").querySelectorAll("summary");
+
+      // when a dropdown item is focused, close other dropdowns automatically
+      dropdownElements.forEach(elt => {
+        elt.addEventListener('focus', (evt) => {
+          // close all other dropdown elements that aren't the currently-focused element
+          for (const dropdownElement of dropdownElements) {
+            if (dropdownElement !== evt.target) dropdownElement.parentNode.removeAttribute('open');
+          }
+        });
+      });
+    </script>
   </div>
 </header>
 <main class="px-4 py-20 sm:px-6 lg:px-8">
